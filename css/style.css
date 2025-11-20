@@ -119,3 +119,12 @@ text-align: left;
     display: inline-block;
     white-space: nowrap;
 }
+
+/* Make social icons in footer uniform and circular */
+.div4 img {
+    width: clamp(36px, 5.2vw, 56px);
+    height: clamp(36px, 5.2vw, 56px);
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
+}
