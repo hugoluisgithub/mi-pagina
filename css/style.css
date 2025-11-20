@@ -1,0 +1,121 @@
+body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* fixed to viewport height so rows distribute without creating scroll */
+    height: 100vh;
+    /* header, middle flexible, footer */
+    grid-template-rows: 20vh 1fr 18vh;
+    row-gap: 0;
+    background-color: rgb(34, 34, 21);
+}
+    
+.div1 {
+    grid-column: 1 / -1;
+    margin: 0;
+    width: 100%;
+    background-color: rgb(34, 51, 36);
+    font-family: SUSE;
+    color: blanchedalmond;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(8px, 1.5vh, 18px);
+    max-height: 20vh;
+    text-align: center;
+    font-size: clamp(1rem, 2.4vh, 1.6rem);
+}
+
+.div2 {
+    grid-row: 2 / 3;
+    background-color: rgb(68, 95, 79);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    min-height: 0; /* allow flexing inside grid */
+}
+
+.div2 img {
+    width: auto;
+    max-width: 90%;
+    max-height: calc(100vh * 0.45);
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.div3 {
+    grid-row: 2 / 3;
+    background-color: rgb(42, 63, 50);
+    padding: 1.2vh 2%;
+    text-align: center;
+    letter-spacing: 1.5px;
+    font-family: SUSE;
+    color: blanchedalmond;
+    font-size: clamp(0.9rem, 1.8vh, 1.05rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.div4 {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    display: flex;
+    height: 18vh;
+    width: 100%;
+    font-family: SUSE;
+    font-size: clamp(0.9rem, 1.6vh, 1rem);
+    color: blanchedalmond;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(34, 51, 36);
+    padding: 6px 2%;
+}
+        
+p {
+    font-weight: bold;
+}
+
+h4 {
+font-family: Onest;
+text-align: left;
+}
+
+/* Animation helpers for per-letter animation */
+.char {
+    display: inline-block;
+    white-space: pre;
+    will-change: transform, color, opacity;
+}
+
+.char-placeholder {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Optional: small visual smoothing when letters animate */
+.letrasAnima {
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: grayscale;
+}
+
+/* Word-mode: animate whole words as blocks on small screens */
+/* (word-mode styles removed — animation runs per-character) */
+/* word-wrap: keep whole words together while allowing per-letter spans inside */
+.word-wrap {
+    display: inline-block;
+    white-space: nowrap;
+}
